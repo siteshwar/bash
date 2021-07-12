@@ -915,6 +915,7 @@ quote_compound_array_word (w, type)
   strcpy (nword + i, value);
 
   FREE(sub);
+  FREE(value);
   return nword;
 }
 
