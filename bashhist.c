@@ -380,6 +380,7 @@ bash_delete_history_range (first, last)
     free_history_entry (discard_list[i]);
   history_lines_this_session -= i;
 
+  FREE(discard_list);
   return 1;
 }
 
