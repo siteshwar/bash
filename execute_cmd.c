@@ -5382,6 +5382,7 @@ execute_subshell_builtin_or_function (words, redirects, builtin, var,
 	      command_line = savestring (the_printed_command_except_trap ? the_printed_command_except_trap : "");
 	      r = execute_disk_command (words, (REDIRECT *)0, command_line,
 		  -1, -1, async, (struct fd_bitmap *)0, flags|CMD_NO_FORK);
+	      FREE(command_line);
 	    }
 	  subshell_exit (r);
 	}
