@@ -1482,6 +1482,8 @@ only_filename:
 	    {
 	      if (free_dirname)
 		free (directory_name);
+
+	      free ((char *) result);
 	      return ((char **)&glob_error_return);
 	    }
 	}
