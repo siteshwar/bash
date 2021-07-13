@@ -439,8 +439,10 @@ indirection_level_string ()
   if (old)
     change_flag ('x', FLAG_ON);
 
-  if (ps4 == 0 || *ps4 == '\0')
-    return (indirection_string);
+  if (ps4 == 0 || *ps4 == '\0') {
+      FREE(ps4);
+      return (indirection_string);
+  }
 
 #if defined (HANDLE_MULTIBYTE)
   ps4_len = strnlen (ps4, MB_CUR_MAX);
