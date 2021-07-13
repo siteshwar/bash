@@ -4273,8 +4273,10 @@ parse_dparen (c)
 	  yylval.word_list = make_word_list (wd, (WORD_LIST *)NULL);
 	  return (ARITH_FOR_EXPRS);
 	}
-      else
-	return -1;		/* ERROR */
+      else {
+        FREE(wval);
+        return -1;		/* ERROR */
+    }
     }
 #endif
 
